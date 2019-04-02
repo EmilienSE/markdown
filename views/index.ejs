@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/markdown.css' />
+    <link rel='stylesheet' href='/stylesheets/jquery-linedtextarea.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Enter markdown text</h1>
+    <form action="/mdown" method="post">
+      <textarea id="text" class="textarea" name="text" rows="10"></textarea>
+      <button type="submit" class="btn btn-dark">Convertir</button>
+    </form>
+
+
+    <div id="wrapper"><% if(locals.htmlMarkdown){ %> <%- htmlMarkdown %> <% } %></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="/javascripts/jquery-linedtextarea.js"></script>
+    <script>
+      $(function() {
+        $('#text').linedtextarea();
+      });
+    </script>
+  </body>
+</html>
