@@ -1,7 +1,8 @@
 {
   "name": "markdownproject",
-  "version": "0.0.0",
-  "private": true,
+  "author": "Emilien SECHILARIU",
+  "version": "0.1.0",
+  "private": false,
   "scripts": {
     "start": "node ./bin/www"
   },

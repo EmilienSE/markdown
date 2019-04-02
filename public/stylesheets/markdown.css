@@ -34,7 +34,7 @@ a {
 #wrapper {
   background-color: #fff;
   padding: 30px;
-  margin: 15px;
+  margin: 10px 0;
   font-size: 15px;
   line-height: 1.6; }
   #wrapper > *:first-child {
@@ -44,7 +44,7 @@ a {
 
 @media screen {
   #wrapper {
-    box-shadow: 0 0 0 1px #cacaca, 0 0 0 4px #eee; } }
+    box-shadow: 0 0 0 1px #cacaca; } }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.7;
