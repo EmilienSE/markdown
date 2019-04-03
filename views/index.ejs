@@ -187,7 +187,7 @@
 
       $('#pdfExport').click(function(event){
         event.preventDefault();
-        $('#pdfExport').prepend('<link rel=\'stylesheet\' type=\'text/css\' href=\'/stylesheets/markdown.css\' />');
+        $('#pdfExport').prepend('<head><link rel=\'stylesheet\' type=\'text/css\' href=\'/stylesheets/markdown.css\' /></head>');
         var textHtml = $('#htmlForm').serialize();
         $.ajax({
           url: '/pdfExport',
@@ -221,11 +221,6 @@
           console.log(element);
 
           document.body.removeChild(element);
-
-          /*$.ajax({
-            url: '/pdfDelete',
-            method: 'GET'
-          });*/
 
         });
       });
