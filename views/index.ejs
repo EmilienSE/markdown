@@ -27,7 +27,7 @@
             <textarea name="htmlMD" id="htmlMD" style="display:none"></textarea>
             <div class="btn-group" style="width:100%;" role="group">
               <button id="pdfExport" type="submit" class="btn btn-info"><i class="fas fa-file-pdf"></i> Exporter en .pdf</button>
-              <button id="mdExport" type="submit" class="btn btn-info" disabled="disabled"><i class="fab fa-markdown"></i> Exporter en .md</button>
+              <button id="mdExport" type="submit" class="btn btn-info"><i class="fab fa-markdown"></i> Exporter en .md</button>
             </div>
           </form>
         </div>
@@ -224,6 +224,21 @@
 
         });
       });
+
+      $('#mdExport').click(function(event){
+        event.preventDefault();
+        var textMD = $('#text').val();
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textMD));
+        element.setAttribute('download', 'conversion.md');
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+      })
 
     </script>
   </body>
